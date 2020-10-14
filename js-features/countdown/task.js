@@ -5,10 +5,10 @@ const countdown = function () {
     if (startTimer.textContent > 0) {
         startTimer.textContent -= 1;
     } else {
+        clearInterval(timerId);
         alert("Вы победили в конкурсе!");
     }
 }
 
-setInterval(countdown, 1000);
-
+const timerId = setInterval(countdown, 1000);
 
