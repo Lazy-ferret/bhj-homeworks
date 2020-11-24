@@ -28,11 +28,11 @@ productAdd.forEach(element => {
             productsInCart.insertAdjacentHTML('beforeend', `
         <div class="cart__product" data-id=${productId}>
             <img class="cart__product-image" src=${productImg}>
-            <div class="cart__product-count">${productQuantity}</div>
+            <div class="cart__product-count">${Number(productQuantity)}</div>
         </div>
         `)
         } else {
-            isProductAdded().querySelector('.cart__product-count').innerText = productQuantity;
+            isProductAdded().querySelector('.cart__product-count').textContent = Number(isProductAdded().querySelector('.cart__product-count').textContent) + Number(productQuantity);
         }
     })
 })
